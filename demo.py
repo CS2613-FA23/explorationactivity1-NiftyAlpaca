@@ -4,9 +4,18 @@ import numpy as np
 from skimage import io;
 import matplotlib.pyplot as plt;
 import picfunc as pf
+import glob
 
-photo = io.imread('Lion.jpg')
 done = False
+imageList = glob.glob("*.jpg")
+
+##Feel free to add any JPG image you want! It just has to be in the same folder as the code
+print("Choose an image from the list: ")
+for i in range(len(imageList)):
+    print(str(i) + " " + imageList[i])
+
+index =int(input())
+photo = io.imread(imageList[index])
 
 plt.imshow(photo)
 plt.show()
@@ -61,6 +70,7 @@ while(not done):
     print("     3. Flip Picture")
     print("     4. Get Stats")
     print("     0. Quit")
+
 
 # %%
 
