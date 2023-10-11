@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt;
 ##Example: skipPixels(photo,1) takes the data of photo and only displays every second pixel (skipping 1 pixel)
 def skipPixels(photo, numToSkip):
     num = numToSkip + 1
-    plt.imshow(photo[::num, ::num])
+    return photo[::num, ::num]
     
 ##Crops pictures based on given row or column ranges
 def cropPictureInRange(photo, startRow, endRow, startCol, endCol):
-    plt.imshow(photo[startRow:endRow,startCol:endCol])
+    return photo[startRow:endRow,startCol:endCol]
     
