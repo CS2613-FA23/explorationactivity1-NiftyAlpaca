@@ -15,12 +15,13 @@ for i in range(len(imageList)):
     print(str(i) + " " + imageList[i])
 
 index =int(input())
+print(str(index))
 photo = io.imread(imageList[index])
 
 plt.imshow(photo)
 plt.show()
 print("Select an option: ")
-print("     1. Skip Pixels")
+print("     1. Decrease Resolution")
 print("     2. Crop Picture")
 print("     3. Flip Picture")
 print("     4. Get Stats")
@@ -28,17 +29,27 @@ print("     0. Quit")
 while(not done):
     try:
         option = int(input())
+        print(str(option))
     except:
         print("Invalid value")
         break
     if(option == 0):
         done = True
+        print("What do you want to name the picture file? Please include jpg extension")
+        response = str(input())
+        print(response)
+        if(".jpg" not in response):
+            print("please make sure file name has .jpg extension")
+            response = str(input())
+            print(response)
+        io.imsave(response, photo)
         print("QUIT")
         break
     elif(option == 1):
-        print("Input amount of pixels to skip")
+        print("Input magnitude to decrease resolution as integer")
         try:
             num = int(input())
+            print(str(num))
         except:
             print("Invalid value")
             break
@@ -48,10 +59,9 @@ while(not done):
     elif(option == 2):
         print("Give input in form 'r1,r2,c1,c2' ")
         val = str(input())
+        print(val)
         x = val.split(',')
-        print(type(photo))
         photo = pf.cropPictureInRange(photo, int(x[0]), int(x[1]),int(x[2]),int(x[3]))
-        print(type(photo))
         plt.imshow(photo)
     elif(option == 3):
         photo = photo[::-1]
@@ -65,7 +75,7 @@ while(not done):
         print(" ")
     plt.show()
     print("Select an option: ")
-    print("     1. Skip Pixels")
+    print("     1. Decrease Resolution")
     print("     2. Crop Picture")
     print("     3. Flip Picture")
     print("     4. Get Stats")
