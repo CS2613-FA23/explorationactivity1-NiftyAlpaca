@@ -1,5 +1,5 @@
 # NumPy Package Overview
-### Colton Coughlin
+### Colton A.G. Coughlin
 
 ## Introduction
 In this exploration activity, we investigate NumPy. An open source numerical computing Python module that provides a multidimensional array data type and a variety of functions that allow a developer to manipulate arrays on the fly.
@@ -11,12 +11,38 @@ After creating a program using NumPy, this report will describe NumPy and my exp
 
 ## NumPy
 
+
+### Aspirations
 "NumPy is an open source project that enables numerical computing with Python. It was created in 2005 building on the early work of the Numeric and Numarray librariees. NumPy will always be 100% open source software and free for all to use" [\[ref\]](https://numpy.org/about/)
 
 The goal of this open source project is simple. Make programming in Python easier for developers. NumPy created a simple solution to a big problem, but it didn't come flawless. "A list is a very useful tool offered by Python, as it lets you store values of different types at once, and perform numerous operations on it. But it has certain limitations, and some operations on list are not efficient," says Shubhanker Singh at towardsdatascience.com when reviewing the package[\[ref\]](https://towardsdatascience.com/a-quick-review-of-numpy-and-matplotlib-48f455db383)
 
+### Code Example of multiplying two nd arrays
+
+#### Source
+
+```python
+import numpy as np
+
+x = [10,20,45,50,100]
+y = [37,45,34,35,64]
+
+np_x = np.array(x)
+np_y = np.array(y)
+
+summation = np_x * np_y
+print(summation)
+type(summation)
+```
+#### Output
+
+```python
+[ 370  900 1530 1750 6400]
+<class 'numpy.ndarray'>
+```
 
 
+With Python alone, we would have had to iterate through both arrays, do the operation multiplication, and return to a newly created list. On a small scale, not a big deal but imagine large scale. "There is no limit to the numbers of rows and columns a matrix (in the usual sense) can have as long as they are positive integers.," says Wikipedia. [\[ref\]](https://en.wikipedia.org/wiki/Matrix_(mathematics)). Mathematicians are happy with it. More math, less time! "NumPy (or Numeric Python) sits at the core of every data science and machine learning project" [\[ref\]].
 
 
 ## Reflection

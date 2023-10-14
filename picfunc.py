@@ -2,8 +2,9 @@ import numpy as np
 from skimage import io;
 import matplotlib.pyplot as plt;
 
-##Using this method excludes data from the picture and prints picture with what is left
-##Example: skipPixels(photo,1) takes the data of photo and only displays every second pixel (skipping 1 pixel)
+##This method lowers the resolution by a integer magnitude, lowering the amount of pixels allowed into the pool.
+## If the integer is 1, then every second pixel (an element in the nd array) will be exluded from the returning data type.
+
 def skipPixels(photo, numToSkip):
     num = numToSkip + 1
     return photo[::num, ::num]
